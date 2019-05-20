@@ -5,14 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  {{@ Loader('/public/static/stylesheets/index.min.css')
+  .css('/public/static/libs/bootstrap/css/bootstrap.css')
+  .css('/public/static/stylesheets/common.css')
+  .css('/public/static/stylesheets/style.less')
+  .css('/public/static/stylesheets/responsive.css')
+  .css('/public/static/stylesheets/jquery.atwho.css')
+  .css('/public/static/libs/editor/editor.css')
+  .css('/public/static/libs/webuploader/webuploader.css')
+  .css('/public/static/libs/code-prettify/prettify.css')
+  .css('/public/static/libs/font-awesome/css/font-awesome.css')
+  .done(assets)}}
+  {{@ Loader('/public/static/index.min.js')
+  .js('/public/static/libs/jquery-2.1.0.js')
+  .js('/public/static/libs/lodash.compat.js')
+  .js('/public/static/libs/jquery-ujs.js')
+  .js('/public/static/libs/bootstrap/js/bootstrap.js')
+  .js('/public/static/libs/jquery.caret.js')
+  .js('/public/static/libs/jquery.atwho.js')
+  .js('/public/static/libs/markdownit.js')
+  .js('/public/static/libs/code-prettify/prettify.js')
+  .js('/public/static/libs/qrcode.js')
+  .js('/public/static/javascripts/main.js')
+  .js('/public/static/javascripts/responsive.js')
+  .done(assets)
+  }}
 </head>
 <body>
-  <div>{{$value}}</div>
   <div>
     {{include './header/header.art'}}
   </div>
   <div>
-   <!-- {{include './content/content.art'}} -->
+   {{include './content/content.art' $data}}
   </div>
   <div>
     {{include './footer/footer.art'}}

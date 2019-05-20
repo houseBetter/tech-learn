@@ -1,3 +1,9 @@
-<footer>
-  <h1>这是尾部</h1>
+<footer id="footer">
+  <div id='footer_main'>
+    <div class="links">
+      <a class='dark' href='javascript:void(null)'>RSS</a>
+      |
+      <a class='dark' href='javascript:void(null)'>源码地址</a>
+    </div>
+  </div>
 </footer>

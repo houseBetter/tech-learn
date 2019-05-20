@@ -12,6 +12,13 @@
   "dependencies": {
     "art-template": "^4.13.2",
     "express": "^4.16.4",
-    "express-art-template": "^1.0.1"
+    "express-art-template": "^1.0.1",
+    "loader": "^2.1.1",
+    "loader-connect": "^1.0.1",
+    "lodash": "^4.17.11",
+    "markdown-it": "^8.4.2",
+    "multiline": "^2.0.0",
+    "validator": "^10.11.0",
+    "xss": "^1.0.6"
   }
 }
