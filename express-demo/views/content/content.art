@@ -1,0 +1,14 @@
+<div>
+  <h1>这是内容区</h1>
+  <div>
+    {{if type === 'index'}} 
+      {{include '../index/index.art'}}
+    {{else if type === 'about'}}
+      {{include '../about/about.art'}}
+    {{else if type === 'signin'}}
+      {{include '../login/signin.art'}}
+    {{else if type === 'signup'}}
+      {{include '../login/signup.art'}}
+    {{/if}}
+  </div>
+</div>
