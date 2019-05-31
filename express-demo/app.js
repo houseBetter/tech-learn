@@ -6,6 +6,8 @@
  const _ = require('lodash');
  const Loader = require('Loader');
  const LoaderConnect = require('loader-connect');
+ const config = require('./config');
+
  //  配置模板引擎
  app.set('views', path.join(__dirname, 'views'));
  app.engine('art', viewEngine);
@@ -14,6 +16,7 @@
 _.extend(app.locals, {
   Loader: Loader,
   assets: {},
+  config: config
 });
 _.extend(app.locals, require('./utils/render_helper'));
 //  配置路由

@@ -4,11 +4,11 @@
 
 var MarkdownIt = require('markdown-it');
 var _          = require('lodash');
-// var config     = require('../config');
+var config     = require('../config');
 var validator  = require('validator');
 var jsxss      = require('xss');
 var multiline = require('multiline')
-
+const path = require('path');
 // Set default options
 var md = new MarkdownIt();
 
@@ -57,12 +57,12 @@ exports.escapeSignature = function (signature) {
   }).join('<br>');
 };
 
-// exports.staticFile = function (filePath) {
-//   if (filePath.indexOf('http') === 0 || filePath.indexOf('//') === 0) {
-//     return filePath;
-//   }
-//   return config.site_static_host + filePath;
-// };
+exports.staticFile = function (filePath) {
+  if (filePath.indexOf('http') === 0 || filePath.indexOf('//') === 0) {
+    return filePath;
+  }
+  return config.site_static_host + filePath;
+};
 
 // exports.tabName = function (tab) {
 //   var pair = _.find(config.tabs, function (pair) {

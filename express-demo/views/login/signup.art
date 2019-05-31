@@ -1,3 +1,6 @@
+
+{{extend '../layout.art'}}
+{{block 'content'}}
 {{include '../index/sidebar.art'}}
 
 <div id='content'>
@@ -54,3 +57,4 @@
     </div>
   </div>
 </div>
+{{/block}}

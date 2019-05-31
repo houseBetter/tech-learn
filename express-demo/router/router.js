@@ -1,31 +1,29 @@
 const express = require('express');
 const router = express.Router();
-const models = require('../models');
-const artDataTemplate = models.artDataTemplate;
+const sign = require('../controller/sign');
 router.get('/', (req, res) => {
-  artDataTemplate.type = 'index';
-  // res.locals传入模板中的数据
-  res.locals = artDataTemplate;
-  res.render('index.art');
+  res.render('index/index.art');
 })
 router.get('/start', (req, res) => {
-  artDataTemplate.type = 'start';
-  res.render('index.art', artDataTemplate);
+  res.render('start/start.art');
 })
 router.get('/api', (req, res) => {
-  artDataTemplate.type = 'api';
-  res.render('index.art', artDataTemplate);
+  res.render('api/api.art');
 })
 router.get('/about', (req, res) => {
-  artDataTemplate.type = 'about';
-  res.render('index.art', artDataTemplate);
+  res.render('about/about.art');
 })
+// 注册页面
 router.get('/signup', (req, res) => {
-  artDataTemplate.type = 'signup';
-  res.render('index.art', artDataTemplate);
+  res.render('login/signup.art');
 })
 router.get('/signin', (req, res) => {
-  artDataTemplate.type = 'signin';
-  res.render('index.art', artDataTemplate);
+  res.render('login/signin.art');
 })
+// router.get('/test', (req, res) => {
+//   res.render('test.art');
+// })
+
+// 提交注册信息
+router.post('/signup', sign.signup);
 module.exports = router;

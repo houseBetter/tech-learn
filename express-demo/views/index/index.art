@@ -1,4 +1,7 @@
 {{include './sidebar.art'}}
+{{extend '../layout.art'}}
+{{block 'content'}}
+{{include './sidebar.art'}}
 <div id="content">
   <div class="panel">
     <div class="header">
@@ -13,3 +16,4 @@
     </div>
   </div>
 </div>
+{{/block}}

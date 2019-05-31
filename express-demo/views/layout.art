@@ -35,8 +35,8 @@
   <div>
     {{include './header/header.art'}}
   </div>
-  <div>
-   {{include './content/content.art' $data}}
+  <div id="main">
+   {{block 'content'}}{{/block}}
   </div>
   <div>
     {{include './footer/footer.art'}}
