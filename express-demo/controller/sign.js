@@ -1,8 +1,10 @@
 const validator = require('validator');
-const models = require('../models');
-const artDataTemplate = models.artDataTemplate;
+// loginname: 
+// pass: 
+// re_pass: 
+// email: 
+// _csrf: 
 exports.signup = function(req, res, next) {
   res.status(422);
-  artDataTemplate.type = 'signup';
-  res.render('index.art', artDataTemplate);
+  res.render('login/signup.art', {error: '错误'});
 } 

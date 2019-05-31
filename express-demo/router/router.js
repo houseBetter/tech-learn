@@ -20,9 +20,6 @@ router.get('/signup', (req, res) => {
 router.get('/signin', (req, res) => {
   res.render('login/signin.art');
 })
-// router.get('/test', (req, res) => {
-//   res.render('test.art');
-// })
 
 // 提交注册信息
 router.post('/signup', sign.signup);
