@@ -19,12 +19,13 @@ _.extend(app.locals, {
   config: config
 });
 _.extend(app.locals, require('./utils/render_helper'));
-//  配置路由
- app.use('/', router)
+
 //  配置资源目录
  app.use('/public', express.static(path.join(__dirname, 'public')));
 //  模板引擎全局变量
  app.listen(9900, () => {
   console.log("Run in localhost:9900");
  })
+ //  配置路由
+ app.use('/', router)
  module.exports = app;
