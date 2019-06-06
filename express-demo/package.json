@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "art-template": "^4.13.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
     "eventproxy": "^1.0.0",
     "express": "^4.16.4",
     "express-art-template": "^1.0.1",
@@ -18,7 +20,11 @@
     "loader-connect": "^1.0.1",
     "lodash": "^4.17.11",
     "markdown-it": "^8.4.2",
+    "moment": "^2.24.0",
+    "mongoose": "^5.5.13",
     "multiline": "^2.0.0",
+    "node-uuid": "^1.4.8",
+    "utility": "^1.16.1",
     "validator": "^10.11.0",
     "xss": "^1.0.6"
   }
