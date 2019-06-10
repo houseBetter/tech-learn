@@ -11,16 +11,18 @@ router.get('/api', (req, res) => {
   res.render('api/api.art');
 })
 router.get('/about', (req, res) => {
-  res.render('about/about.art');
+  res.render('about/about');
 })
 // 注册页面
 router.get('/signup', (req, res) => {
   res.render('login/signup.art');
 })
-router.get('/signin', (req, res) => {
-  res.render('login/signin.art');
-})
-
 // 提交注册信息
 router.post('/signup', sign.signup);
+// 登录页面
+router.get('/signin',sign.showLogin);
+// 登录请求
+router.post('/signin', sign.login);
+
+
 module.exports = router;

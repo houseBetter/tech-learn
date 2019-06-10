@@ -47,7 +47,7 @@ var config = {
   auth_cookie_name: 'node_club',
 
   // 程序运行的端口
-  port: 9998,
+  port: 9900,
 
   // 话题列表显示的话题数量
   list_topic_count: 20,
