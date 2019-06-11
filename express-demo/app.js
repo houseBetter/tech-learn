@@ -10,21 +10,20 @@
  const bodyParser = require('body-parser');
  const session = require('express-session');
  const RedisStore = require('connect-redis')(session);
+ const passport = require('passport');
+ const auth = require('./middlewares/auth');
+ const proxyMiddleware = require('./middlewares/proxy');
  //  配置模板引擎
  app.set('views', path.join(__dirname, 'views'));
  app.set('view engine', 'art');
  app.engine('art', viewEngine);
  //  编译less文件成css文件
  app.use(LoaderConnect.less(__dirname));
-_.extend(app.locals, {
-  Loader: Loader,
-  assets: {},
-  config: config
-});
-_.extend(app.locals, require('./utils/render_helper'));
+ app.enable('trust proxy');
 
 //  配置资源目录
  app.use('/public', express.static(path.join(__dirname, 'public')));
+ app.use('/agent', proxyMiddleware.proxy);
 //  中间件
 app.use(bodyParser.json({limit: '1mb'}));
 app.use(bodyParser.urlencoded({ extended: true, limit: '1mb' }));
@@ -40,6 +39,18 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
 }));
+// oauth 中间件
+app.use(passport.initialize());
+// custom middleware
+app.use(auth.authUser);
+app.use(auth.blockUser());
+
+_.extend(app.locals, {
+  Loader: Loader,
+  assets: {},
+  config: config
+});
+_.extend(app.locals, require('./utils/render_helper'));
 //  模板引擎全局变量
  app.listen(9900, () => {
   console.log("Run in localhost:9900");

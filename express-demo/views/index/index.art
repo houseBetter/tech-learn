@@ -1,4 +1,4 @@
-{{include './sidebar.art'}}
+
 {{extend '../layout.art'}}
 {{block 'content'}}
 {{include './sidebar.art'}}

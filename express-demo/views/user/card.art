@@ -1,0 +1,25 @@
+<div class='user_card'>
+  <div>
+    <a class='user_avatar' href="/user/{{current_user.loginname}}">
+      <img src="{{proxy(current_user.avatar_url)}}" title=""/>
+    </a>
+    <span class='user_name'><a class='dark' href="/user/{{current_user.loginname}}">{{current_user.loginname}}</a></span>
+    <div class='board clearfix'>
+      <div class='floor'>
+        <span class='big'>积分: {{current_user.score}} </span>
+      </div>
+    </div>
+    <div class="space clearfix"></div>
+    <span class="signature">
+        “
+        {{if (current_user.signature)}}
+          {{escapeSignature(current_user.signature)}}
+        {{else}}
+            这家伙很懒，什么个性签名都没有留下。
+        {{/if}}
+        ”
+    </span>
+  </div>
+</div>
+
+
