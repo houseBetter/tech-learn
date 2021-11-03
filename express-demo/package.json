@@ -30,7 +30,7 @@
     "node-uuid": "^1.4.8",
     "passport": "^0.4.0",
     "utility": "^1.16.1",
-    "validator": "^10.11.0",
+    "validator": "^13.7.0",
     "xss": "^1.0.6"
   }
 }
